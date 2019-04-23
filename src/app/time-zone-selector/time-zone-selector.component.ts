@@ -23,9 +23,9 @@ export class TimeZoneSelectorComponent implements OnInit {
   }
 
   ngOnInit() {
-    const currentTime = moment.tz.guess();
-    this.timezoneSelector.setValue(currentTime);
-    this.timezoneChange.emit(currentTime);
+    const currentTimeZone = moment.tz.guess();
+    this.timezoneSelector.setValue(currentTimeZone);
+    this.timezoneChange.emit(currentTimeZone);
     this.filteredOptions = this.timezoneSelector.valueChanges.pipe(
       map(val => this.filter(val))
     );
