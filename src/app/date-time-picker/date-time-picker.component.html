@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="action-buttons">
+    <button class="btn btn-success" title="Converts date with relative zones selected on each change" (click)="isRelative=true">Relative</button>
+    <button class="btn btn-success" title="Converts date with initially selected zones" (click)="isRelative=false">Initial Selected</button>
+  </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">{{getMessage(isRelative)}}</div>
+    <div class="panel-body">
+        <time-zone-selector (timezoneChange)="onTimezoneChange($event)"></time-zone-selector>
+
+        <flatpicker [flatpickerOptions]="flatpickerOptions" [selectedDateString]="selectedDateString"></flatpicker>
+    </div>
+  </div>
+
+</div>
